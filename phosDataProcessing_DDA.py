@@ -6,7 +6,7 @@ Created on Thu Nov 25 12:45:11 2021
 
 When exporting data from pd, use R friendly txt format, and apply the export layout -- exportlyts (or use TYT search workflows that automatically apply this layout)
 Make sure you are in the correct directory 
-The script below needs a library or metafile that can extract ncessary data from the csv files. Be sure your csvs have the same column names as your library/metafile.
+The script below needs a library or metafile that can extract necessary data from the csv files. Be sure your csvs have the same column names as your library/metafile.
 You can define the experiment type in expType, so that you don not need to edit files that get exported along the way, and you can automatically correct with sup
 reachout if you have any questions -- tytamir@mit.edu
 """
