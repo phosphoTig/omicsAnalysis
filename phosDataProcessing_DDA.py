@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 25 12:45:11 2021
-
 @author: tytamir
 
 When exporting data from pd, use R friendly txt format, and apply the export layout -- exportlyts (or use TYT search workflows that automatically apply this layout)
@@ -293,7 +291,7 @@ def bridgeCenter_data(df, brg):
     return dfbrg #, dfbrglg2
 
 
-#import PhosphoSitePlus csv file for motif assignments. Using human proteome for this project. There is also separate mouse and rat PhosphoSitePlus csv files. 
+#import PhosphoSitePlus csv file for motif assignments. Using mouse proteome for this project. There is also separate human and rat PhosphoSitePlus csv files. 
 phosSite=pd.read_csv('Phosphosite Motifs_M.csv', sep=',')
 
 dataDF=pd.read_csv('metaFiles.csv',sep=',').set_index('expType')
@@ -340,7 +338,7 @@ def concat_dfs(data):
 
     return df_u, df_n
 
-# Common function for processing s4G10 and bioxell
+# Common function for processing data
 def process_runs(keys, prefix, output_prefix):
     run_corr = {}
     wMC = {}
@@ -384,7 +382,7 @@ def process_runs(keys, prefix, output_prefix):
     
     return mcB_run, concatDict
 
-# Process s4G10
+# Process pY data
 s4G10={}
 s4G10_runFactors, s4G10=process_runs(['F1_pY_a_DDA', 'F2_pY_a_DDA', 'F3_pY_a_DDA', 'M1_pY_b_DDA', 'M2_pY_a_DDA', 'M3_pY_a_DDA'], 's4G10', 's4g10_pY')
 
@@ -392,13 +390,6 @@ s4G10_runFactors.to_csv("pY_s4G10_runCorrection_factors.csv")
 for i, j in s4G10.items():
     j.to_csv("s4G10_pY_"+i+".csv")
 
-# Process bioxell
-bioxell={}
-bioxell_runFactors, bioxell=process_runs(['F1b_pY_DDA', 'F2b_pY_DDA', 'F3b_pY_DDA', 'M1c_pY_DDA', 'M2b_pY_DDA', 'M3b_pY_DDA'], 'bioxell', 'bioxell_pY')
-
-bioxell_runFactors.to_csv("pY_bioxell_runCorrection_factors.csv")
-for i, j in bioxell.items():
-    j.to_csv("bioxell_pY_"+i+".csv")
 
 
 
