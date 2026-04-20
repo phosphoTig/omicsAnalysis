@@ -1,5 +1,5 @@
 # omicsAnalysis
-Associated with publication Tamir et al 2024: https://www.biorxiv.org/content/10.1101/2024.08.28.609894v1.full
+Associated with publication Tamir et al 2025 (PMID: 40441152): https://www.sciencedirect.com/science/article/pii/S1097276525004125?via%3Dihub
 
 Pipeline to process and visualize searched phosphoproteomics and metabolomics datasets
 - These set of python scripts process peptide spectral matches (PSM) files proteomics/phosphoproteomics LC-MS runs
